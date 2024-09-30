@@ -2,7 +2,7 @@ package com.noah.whatsappclone.shared.authentication.domain;
 
 
 
-import fr.codecake.whatsappclone.shared.error.domain.Assert;
+import com.noah.whatsappclone.shared.error.domain.Assert;
 
 import java.util.Map;
 import java.util.function.Function;

@@ -4,8 +4,8 @@ import com.noah.whatsappclone.shared.error.domain.Assert;
 
 import java.time.Instant;
 
-public record  MessageSendTime(Instant date) {
-    public MessageSendTime {
+public record MessageSentTime(Instant date) {
+    public MessageSentTime {
         Assert.field("date", date).notNull();
     }
 }

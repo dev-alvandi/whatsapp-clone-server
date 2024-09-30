@@ -2,6 +2,7 @@ package com.noah.whatsappclone.messaging.domain.message.aggregate;
 
 import com.noah.whatsappclone.messaging.domain.message.valueObject.ConversationName;
 import com.noah.whatsappclone.messaging.domain.message.valueObject.ConversationPublicId;
+import com.noah.whatsappclone.messaging.domain.user.aggregate.User;
 import com.noah.whatsappclone.shared.error.domain.Assert;
 import org.jilt.Builder;
 
@@ -26,6 +27,7 @@ public class Conversation {
                         ConversationPublicId conversationPublicId,
                         ConversationName conversationName,
                         Long dbId) {
+        assertMandatoryFields(members, conversationName);
         this.messages = messages;
         this.members = members;
         this.conversationPublicId = conversationPublicId;
@@ -36,5 +38,25 @@ public class Conversation {
     private void assertMandatoryFields(Set<User> users, ConversationName name) {
         Assert.notNull("users", users);
         Assert.notNull("name", name); // 28:50
+    }
+
+    public Set<Message> getMessages() {
+        return messages;
+    }
+
+    public Set<User> getMembers() {
+        return members;
+    }
+
+    public ConversationPublicId getConversationPublicId() {
+        return conversationPublicId;
+    }
+
+    public ConversationName getConversationName() {
+        return conversationName;
+    }
+
+    public Long getDbId() {
+        return dbId;
     }
 }

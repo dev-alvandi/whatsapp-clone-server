@@ -1,7 +1,7 @@
 package com.noah.whatsappclone.shared.authentication.domain;
 
 
-import fr.codecake.whatsappclone.shared.error.domain.Assert;
+import com.noah.whatsappclone.shared.error.domain.Assert;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;
